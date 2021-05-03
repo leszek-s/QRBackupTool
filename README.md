@@ -47,5 +47,10 @@ Notes:
       text file and decode from that instead of decoding from image files. You
       can mix both decoding modes, duplicates will be automatically detected.
 ```
+
+# Notes
+
+QRBackupTool store around 2,6KB of binary data in a single QR barcode with default settings. The file that you want to encode of course can be much bigger and in such case many QR barcodes will be generated and you can print more than one on A4 page. If you need to encode more than one file you can always compress them to a single file and encode that compressed file. Recommended amount of barcodes for printing on A4 page is 20 (use command line option: `-t 4x5`) which gives around 50 KB of binary data on A4 paper page. This setting should allow to decode the file later from scanned images printed with a common home ink printer without problems. During tests maximum amount of successfully recovered data from a single A4 page was around 90 KB (`-t 5x7`) when generated image was printed on a common ink printer. However that required to scan few QR barcodes with mobile phone and use additional codes file option therefore it is not recommend unless you have a good laser printer and a good scanner.
+
 ## License
 QRBackupTool is available under the MIT license.

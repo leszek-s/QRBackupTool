@@ -438,6 +438,7 @@ func detectQrBarcodes(image: CIImage) -> [String] {
                 let adjustedImage = adjustImage(image: img, exposure: exposure, contrast: contrast)
                 let qrBarcodes = readQrBarcodes(image: adjustedImage)
                 detectedQrBarcodes.append(contentsOf: qrBarcodes)
+                print("Detected \(Array(Set(detectedQrBarcodes)).count) (c: \(contrast), e: \(exposure), r: \(img == imageRotated))")
                 if maxNumberOfQrBarcodes > 0 && (Array(Set(detectedQrBarcodes)).count == maxNumberOfQrBarcodes) {
                     return Array(Set(detectedQrBarcodes))
                 }
